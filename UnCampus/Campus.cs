@@ -10,17 +10,21 @@ namespace UnCampus
     internal class Campus
     {
         public Student[] students;
-        public int NumberOfStudents { get; set; }
-        public string Name { get; set; }
+        private int NumberOfStudents { get; set; }
+        private string Name { get; set; }
 
-
-
+        /// <summary>
+        /// Campus class declaration
+        /// </summary>
+        /// <param name="nameOfCampus"></param>
         public Campus(string nameOfCampus)
         {
             Name = nameOfCampus;
-
         }
 
+        /// <summary>
+        /// Display students quantity
+        /// </summary>
         public void DisplayStudents()
         {
             foreach (Student student in students)
@@ -28,13 +32,22 @@ namespace UnCampus
                 Console.WriteLine(student.Name);
             }
         }
+
+        /// <summary>
+        /// Add a new student in campus
+        /// </summary>
+        /// <param name="newStudent"></param>
         public void AddStudent(Student newStudent)
         {
             NumberOfStudents++;
             Array.Resize(ref students, NumberOfStudents);
             students[NumberOfStudents - 1] = newStudent;
-
         }
+
+        /// <summary>
+        /// Returns the notes average of campus
+        /// </summary>
+        /// <returns></returns>
         public double  GetCampusAverage()
         {   
             double sumOfNotesByCampus = 0; double result = 0;
