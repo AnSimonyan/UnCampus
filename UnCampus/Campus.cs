@@ -10,8 +10,8 @@ namespace UnCampus
     internal class Campus
     {
         public Student[] students;
-        private int NumberOfStudents { get; set; }
-        private string Name { get; set; }
+        private int _numberOfStudents { get; set; }
+        private string _name { get; set; }
 
         /// <summary>
         /// Campus class declaration
@@ -19,7 +19,7 @@ namespace UnCampus
         /// <param name="nameOfCampus"></param>
         public Campus(string nameOfCampus)
         {
-            Name = nameOfCampus;
+            _name = nameOfCampus;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace UnCampus
         {
             foreach (Student student in students)
             {
-                Console.WriteLine(student._name);
+                Console.WriteLine(student.GetNameOfStudent());
             }
         }
 
@@ -39,9 +39,9 @@ namespace UnCampus
         /// <param name="newStudent"></param>
         public void AddStudent(Student newStudent)
         {
-            Array.Resize(ref students, NumberOfStudents+1);
-            students[NumberOfStudents] = newStudent;
-            NumberOfStudents++;
+            Array.Resize(ref students, _numberOfStudents+1);
+            students[_numberOfStudents] = newStudent;
+            _numberOfStudents++;
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace UnCampus
             {
                 sumOfNotesByCampus = sumOfNotesByCampus + student.GetAvarageOfStudent();
             }
-            if (NumberOfStudents != 0) result = sumOfNotesByCampus / NumberOfStudents;
+            if (_numberOfStudents != 0) result = sumOfNotesByCampus / _numberOfStudents;
 
             return result;
         }

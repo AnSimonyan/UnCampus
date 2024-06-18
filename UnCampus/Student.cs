@@ -9,7 +9,7 @@ namespace UnCampus
     internal class Student
     {
         private string _name { get; set; }
-        private double[] _notes { get; set}
+        private double[] _notes { get; set; }
 
         /// <summary>
         /// Students class declaration
@@ -48,6 +48,15 @@ namespace UnCampus
             double result = 0;
             if (_notes.Length !=0) result = _notes.Average();
             return result;
+        }
+
+        /// <summary>
+        /// Return the name of student
+        /// </summary>
+        /// <returns></returns>
+        public string GetNameOfStudent()
+        {
+            return _name;
         }
     }
 }
