@@ -29,7 +29,7 @@ namespace UnCampus
         {
             foreach (Student student in students)
             {
-                Console.WriteLine(student.Name);
+                Console.WriteLine(student._name);
             }
         }
 
@@ -39,9 +39,9 @@ namespace UnCampus
         /// <param name="newStudent"></param>
         public void AddStudent(Student newStudent)
         {
+            Array.Resize(ref students, NumberOfStudents+1);
+            students[NumberOfStudents] = newStudent;
             NumberOfStudents++;
-            Array.Resize(ref students, NumberOfStudents);
-            students[NumberOfStudents - 1] = newStudent;
         }
 
         /// <summary>

@@ -8,8 +8,8 @@ namespace UnCampus
 {
     internal class Student
     {
-        private string Name { get; set; }
-        private double[] Notes { get; set}
+        private string _name { get; set; }
+        private double[] _notes { get; set}
 
         /// <summary>
         /// Students class declaration
@@ -18,8 +18,8 @@ namespace UnCampus
         /// <param name="notes"></param>
         public Student(string studentName, double[] notes)
         {
-            Name = studentName;
-            Notes = notes;
+            _name = studentName;
+            _notes = notes;
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace UnCampus
         /// <param name="interlocutor"></param>
         public void TalkWithAnotherStudent(Student interlocutor)
         {
-            Console.WriteLine(Name + "talk with " + interlocutor.Name);
+            Console.WriteLine(_name + "talk with " + interlocutor._name);
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace UnCampus
         /// <param name="interlocutor"></param>
         public void YellingAtAnotherStudent(Student interlocutor)
         {
-            Console.WriteLine(Name + "yell at " + interlocutor.Name);
+            Console.WriteLine(_name + "yell at " + interlocutor._name);
         }
         /// <summary>
         /// Returns the student's nots average 
@@ -46,7 +46,7 @@ namespace UnCampus
         public double GetAvarageOfStudent()
         {
             double result = 0;
-            if (Notes.Length !=0) result = Notes.Average();
+            if (_notes.Length !=0) result = _notes.Average();
             return result;
         }
     }
